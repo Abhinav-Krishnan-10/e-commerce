@@ -1,0 +1,16 @@
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { CartSidebarProvider } from "@/components/cart/CartSidebar";
+import { ReactNode } from "react";
+
+export default function MainLayout({ children }: { children: ReactNode }) {
+  return (
+    <CartSidebarProvider>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </div>
+    </CartSidebarProvider>
+  );
+}
